@@ -3,23 +3,14 @@
  * @param {string} t
  * @return {boolean}
  */
+const fun=(str)=>{
+  let arr = [];  
+ for (var i = 0; i < str.length; i++) {
+    if (str[i] === '#') arr.pop();
+     else arr.push(str[i]);
+  }
+    return String(arr)
+}
 var backspaceCompare = function(s, t) {
-  let str1 = [];
-  let str2 = [];
-  for (var i = 0; i < s.length; i++) {
-    if (s[i] === '#') {
-      str1.pop();
-    } else {
-      str1.push(s[i]);
-    }
-  }
-  for (var i = 0; i < t.length; i++) {
-    if (t[i] === '#') {
-      str2.pop();
-    } else {
-      str2.push(t[i]);
-    }
-  }
-  return String(str1) === String(str2);
-    
+  return fun(s) === fun(t);    
 };
